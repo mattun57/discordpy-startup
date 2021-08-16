@@ -1,9 +1,11 @@
 from discord.ext import commands
 from os import getenv
 import traceback
+import discord
 
 bot = commands.Bot(command_prefix='/')
 
+client = discord.Client()
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -20,17 +22,31 @@ async def shibuya(ctx):
 @bot.command()
 async def mori(ctx):
     await ctx.send('都会の公園を走るリスさんのように♪')
-    
-    
+       
     
 @bot.command()
 async def mattun(ctx):
-    await ctx.send('プロデューサーさん...ありがとうございます...')
+    await ctx.send('プロデューサーさん...いつもありがとうございます...')
     
     
 @bot.command()
 async def miyagawa(ctx):
     await ctx.send('ひっ...')
+    
+    
+@bot.command()
+async def no(ctx):
+    await ctx.send('今日はむりくぼですけど...')
+    
+    
+@bot.command()
+async def yes(ctx):
+    await ctx.send('今すぐいけますけど...')
+    
+    
+@bot.command()
+async def ass(ctx):
+    await ctx.send('ケツの穴臭すぎですけど...')
     
 """    
 @client.event
