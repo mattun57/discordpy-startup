@@ -54,7 +54,7 @@ async def test(ctx):
     
   
 # チャンネル入退室時の通知処理
-@client.event()
+@client.event
 async def on_voice_state_update(member, before, after):
  
     # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
