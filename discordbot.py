@@ -57,7 +57,6 @@ async def test(ctx):
 @client.event
 async def on_voice_state_update(member, before, after):
  
-    # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
     # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
     botRoom = client.get_channel(600996774336790539)
 
