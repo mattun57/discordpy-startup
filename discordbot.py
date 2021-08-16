@@ -15,7 +15,7 @@ async def on_command_error(ctx, error):
 
 @bot.command()
 async def shibuya(ctx):
-    await ctx.send('渋谷は苦手ですけど...')
+    await ctx.send('本田は嫌いですけど...')
     
 
 @bot.command()
@@ -30,7 +30,7 @@ async def mattun(ctx):
     
 @bot.command()
 async def miyagawa(ctx):
-    await ctx.send('ひっ...')
+    await ctx.send('ひん')
     
     
 @bot.command()
@@ -73,5 +73,6 @@ async def on_voice_state_update(member, before, after):
             
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
-test = ".6EraaQ_K_y_ST7_mR9K9_8e0ETc"
-client.run("ODc2NzQzMTQzMDc5NDQwNDM0.YRogrg" + test)
+#test = ".6EraaQ_K_y_ST7_mR9K9_8e0ETc"
+#client.run("ODc2NzQzMTQzMDc5NDQwNDM0.YRogrg" + test)
+client.run(token)
