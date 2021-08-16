@@ -16,7 +16,7 @@ async def on_command_error(ctx, error):
 async def shibuya(ctx):
     await ctx.send('渋谷は苦手ですけど...')
     
-
+'''
 @bot.command()
 async def mori(ctx):
     await ctx.send('都会の公園を走るリスさんのように♪')
@@ -48,6 +48,6 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入ってきましたけど...")
 
-
+'''
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
