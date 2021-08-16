@@ -48,7 +48,7 @@ async def yes(ctx):
 async def ass(ctx):
     await ctx.send('ケツの穴臭すぎですけど...')
     
-"""    
+  
 @client.event
 async def on_voice_state_update(member, before, after):
  
@@ -63,7 +63,7 @@ async def on_voice_state_update(member, before, after):
         # 入室通知
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が入ってきましたけど...")
-"""
 
+            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
