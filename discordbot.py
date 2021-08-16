@@ -57,6 +57,11 @@ async def test(ctx):
 async def he(ctx):
     await ctx.send('オナラですけど...')
     
+    
+@bot.command()
+async def dare(ctx):
+    await ctx.send('森久保ですけど...')
+    
   
 '''
 # チャンネル入退室時の通知処理
@@ -78,17 +83,16 @@ async def on_voice_state_update(member, before, after):
 '''
 
 @client.event
-async def discord.on_voice_state_update(member,before,after):
-    botRoom = client.get_channel(600996774336790539)
+async def on_voice_state_update(member,before,after):
     if before.channel != after.channel:
         # before.channelとafter.channelが異なるなら入退室
         if after.channel and len(after.channel.members) == 1:
             # もし、ボイスチャットが開始されたら
-            botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
+            send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
 
         if before.channel and len(before.channel.members) == 0:
             # もし、ボイスチャットが終了したら
-            botRoom.send("**" + before.channel.name + "** から、__" + member.name + "__  が抜けましたけど...")
+            send("**" + before.channel.name + "** から、__" + member.name + "__  が抜けましたけど...")
             
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
