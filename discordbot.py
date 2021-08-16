@@ -52,6 +52,11 @@ async def ass(ctx):
 async def test(ctx):
     await ctx.send('テストですけど...')
     
+    
+@bot.command()
+async def he(ctx):
+    await ctx.send('オナラですけど...')
+    
   
 '''
 # チャンネル入退室時の通知処理
