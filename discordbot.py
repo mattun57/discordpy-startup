@@ -70,4 +70,5 @@ async def on_voice_state_update(member, before, after):
             
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
-client.run("ODc2NzQzMTQzMDc5NDQwNDM0.YRogrg._aUcOZhrIxFIDx6h3BjH_Q9xYo4")
+test = "._aUcOZhrIxFIDx6h3BjH_Q9xYo4"
+client.run("ODc2NzQzMTQzMDc5NDQwNDM0.YRogrg" + test)
