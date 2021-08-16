@@ -53,6 +53,7 @@ async def test(ctx):
     await ctx.send('テストですけど...')
     
   
+'''
 # チャンネル入退室時の通知処理
 @client.event
 async def on_voice_state_update(member, before, after):
@@ -69,7 +70,20 @@ async def on_voice_state_update(member, before, after):
     # 入室通知
     if after.channel is not None and after.channel.id in announceChannelIds:
         await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
+'''
 
+@client.event
+async def on_voice_state_update(member,before,after):
+    botRoom = client.get_channel(600996774336790539)
+    if before.channel != after.channel:
+        # before.channelとafter.channelが異なるなら入退室
+        if after.channel and len(after.channel.members) == 1:
+            # もし、ボイスチャットが開始されたら
+            botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
+
+        if before.channel and len(before.channel.members) == 0:
+            # もし、ボイスチャットが終了したら
+            botRoom.send("**" + before.channel.name + "** から、__" + member.name + "__  が抜けましたけど...")
             
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
