@@ -78,7 +78,7 @@ async def on_voice_state_update(member, before, after):
 '''
 
 @client.event
-async def on_voice_state_update(member,before,after):
+async def discord.on_voice_state_update(member,before,after):
     botRoom = client.get_channel(600996774336790539)
     if before.channel != after.channel:
         # before.channelとafter.channelが異なるなら入退室
