@@ -47,6 +47,11 @@ async def yes(ctx):
 async def ass(ctx):
     await ctx.send('ケツの穴臭すぎですけど...')
     
+    
+@bot.command()
+async def test(ctx):
+    await ctx.send('テストですけど...')
+    
   
 # チャンネル入退室時の通知処理
 @client.event
