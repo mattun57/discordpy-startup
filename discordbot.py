@@ -4,24 +4,6 @@ import asyncio
 
 client = discord.Client()
 
-'''
-@client.event
-async def on_voice_state_update(member, before, after):
-
-    if before.channel != after.channel:
-        # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
-        botRoom = client.get_channel(600996774336790540)
-        # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
-        announceChannelIds = [600996774336790541]
-
-        # 退室通知
-        if before.channel is not None and before.channel.id in announceChannelIds:
-            await botRoom.send("**しーめい** から、__" + member.name + "__  が抜けましたけど...")
-        # 入室通知
-        if after.channel is not None and after.channel.id in announceChannelIds:
-            await botRoom.send("**しーめい** に、__" + member.name + "__  が参加しましたけど...")
-'''
-
 @client.event
 async def on_ready():
 	print('Logged in as')
