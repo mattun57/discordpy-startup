@@ -37,9 +37,7 @@ async def on_voice_state_update(member, before, after):
         botRoom = client.get_channel(600996774336790539)
         print(botRoom)
         print(member)
-        print(before)
-        print(after)
-        print(message)
+        print(client.channel)
         #if before.channel is None:
          #   msg = f'{member.name} さんが {after.channel.name} に参加しましたけど...'
           #  await botRoom.send(msg)
