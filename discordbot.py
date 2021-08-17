@@ -98,14 +98,21 @@ async def on_voice_state_update(member, before, after):
             msg = f'{member.name} が {before.channel.name} から退出しました。'
             await alert_channel.send(msg)
 '''
-
+'''
 @client.event
 async def on_voice_state_update(before, after):
     if before.voice.voice_channel is None and after.voice.voice_channel is not None:
         for channel in before.server.channels:
             if channel.name == '一般':
                 await client.send_message(channel, "きましたけど...")
+'''
 
+@client.event
+async def on_message(message):
+    if message.content.startswith("hello"):
+        m = "こんにちは"
+        await client.send_message(message.channel,m)
+        
            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
