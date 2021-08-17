@@ -5,9 +5,9 @@ import traceback
 import discord
 import asyncio
 
-bot = commands.Bot(command_prefix='/')
+#bot = commands.Bot(command_prefix='/')
 client = discord.Client()
-
+'''
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
@@ -58,7 +58,7 @@ async def yeah(ctx):
 @bot.command()
 async def dare(ctx):
     await ctx.send('森久保ですけど...')
-    
+'''    
 '''
 @client.event
 async def on_voice_state_update(member, before, after):
@@ -100,5 +100,5 @@ async def on_message(message):
         
            
 token = getenv('DISCORD_BOT_TOKEN')
-bot.run(token)
+#bot.run(token)
 client.run(token)
