@@ -86,32 +86,20 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
 '''
-'''
 @client.event
 async def on_voice_state_update(member, before, after): 
-    if member.guild.id == '600996774336790538' and (before.channel != after.channel):
-        alert_channel = client.get_channel('600996774336790539')
+    if member.guild.id == 600996774336790538:
+        text_ch = client.get_channel(600996774336790539)
         if before.channel is None: 
             msg = f'{member.name} が {after.channel.name} に参加しました。'
-            await alert_channel.send(msg)
-        elif after.channel is None: 
-            msg = f'{member.name} が {before.channel.name} から退出しました。'
-            await alert_channel.send(msg)
+            await text_ch.send(msg)
 '''
-'''
-@client.event
-async def on_voice_state_update(before, after):
-    if before.voice.voice_channel is None and after.voice.voice_channel is not None:
-        for channel in before.server.channels:
-            if channel.name == '一般':
-                await client.send_message(channel, "きましたけど...")
-'''
-
 @client.event
 async def on_message(message):
     if message.content.startswith("hello"):
         m = "こんにちは"
         await client.send_message(message.channel,m)
+'''
         
            
 token = getenv('DISCORD_BOT_TOKEN')
