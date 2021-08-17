@@ -34,7 +34,7 @@ async def on_ready():
 async def on_voice_state_update(member, before, after):
     if member.guild.id == 600996774336790538:
         text_ch = 600996774336790539
-        botRoom = client.fetch_channel(600996774336790538)
+        botRoom = discord.utils.get(guild.text_channels, name="一般")
         print(botRoom)
         if before.channel is None:
             #msg = f'{member.name} さんが {after.channel.name} に参加しましたけど...'
