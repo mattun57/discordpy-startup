@@ -36,7 +36,7 @@ async def on_ready():
 @client.event
 async def on_voice_state_update(member, before, after): 
     if member.guild.id == 600996774336790538:
-        text_ch = client.get_channel(600996774336790539)
+        text_ch = '一般'
         if before.channel is None: 
             msg = f'{member.name} が {after.channel.name} に参加しました。'
             await text_ch.send(msg)
