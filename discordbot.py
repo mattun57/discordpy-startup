@@ -2,11 +2,7 @@ from discord.ext import commands
 from os import getenv
 import traceback
 
-import discord
-import asyncio
-
 bot = commands.Bot(command_prefix='/')
-client = discord.Client()
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -76,20 +72,7 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
 '''
-@client.event
-async def on_ready():
-	print('Logged in as')
-	print(client.user.name)
-	print(client.user.id)
-	print('------')
-    
-@client.event
-async def on_voice_state_update(member, before, after): 
-    if member.guild.id == 600996774336790538:
-        text_ch = client.get_channel(600996774336790539)
-        if before.channel is None: 
-            msg = f'{member.name} が {after.channel.name} に参加しました。'
-            await text_ch.send(msg)
+
 '''
 @client.event
 async def on_message(message):
@@ -101,4 +84,4 @@ async def on_message(message):
            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
-client.run(token)
+
