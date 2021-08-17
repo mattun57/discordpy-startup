@@ -68,7 +68,7 @@ async def yeah(ctx):
 async def dare(ctx):
     await ctx.send('森久保ですけど...')
     
-
+'''
 @client.event
 async def on_voice_state_update(member, before, after):
  
@@ -84,7 +84,19 @@ async def on_voice_state_update(member, before, after):
         # 入室通知
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
+'''
 
+@client.event
+async def on_voice_state_update(member, before, after): 
+    if member.guild.id == 600996774336790538 and (before.channel != after.channel):
+        alert_channel = client.get_channel(600996774336790539)
+        if before.channel is None: 
+            msg = f'{member.name} が {after.channel.name} に参加しました。'
+            await alert_channel.send(msg)
+        elif after.channel is None: 
+            msg = f'{member.name} が {before.channel.name} から退出しました。'
+            await alert_channel.send(msg)
+            
            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
