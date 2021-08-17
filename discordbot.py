@@ -46,7 +46,7 @@ async def on_voice_state_update(member, before, after):
 async def on_message(message):
     if message.content.startswith("hello"):
         m = "こんにちは...ですけど"
-        await message.channel.send(m)
+        await message.channel.send(message)
 
         
            
