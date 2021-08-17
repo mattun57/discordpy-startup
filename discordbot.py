@@ -101,4 +101,4 @@ async def on_message(message):
            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
-#client.run(token)
+client.run(token)
