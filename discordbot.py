@@ -103,7 +103,7 @@ async def on_voice_state_update(member, before, after):
 async def on_voice_state_update(before, after):
     if before.voice.voice_channel is None and after.voice.voice_channel is not None:
         for channel in before.server.channels:
-            if channel.name == 'general':
+            if channel.name == '一般':
                 await client.send_message(channel, "きましたけど...")
 
            
