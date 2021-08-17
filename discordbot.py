@@ -3,7 +3,6 @@ from os import getenv
 import traceback
 
 import discord
-import asyncio
 
 bot = commands.Bot(command_prefix='/')
 client = commands.Bot(command_prefix='!')
@@ -19,51 +18,41 @@ async def on_command_error(ctx, error):
 async def shibuya(ctx):
     await ctx.send('本田は嫌いですけど...')
     
-
 @bot.command()
 async def mori(ctx):
     await ctx.send('こんにちは、お元気にしてますか？私は今、もりのくにで暮らしています。')
        
-    
 @bot.command()
 async def mattun(ctx):
     await ctx.send('プロデューサーさん...いつもありがとうございます...')
-    
     
 @bot.command()
 async def miyagawa(ctx):
     await ctx.send('ひん')
     
-    
 @bot.command()
 async def no(ctx):
     await ctx.send('今日はむりくぼですけど...')
-    
     
 @bot.command()
 async def yes(ctx):
     await ctx.send('今すぐいけますけど...')
     
-    
 @bot.command()
 async def wait(ctx):
     await ctx.send('ちょっと待ってくださいぃ...')
-    
     
 @bot.command()
 async def ass(ctx):
     await ctx.send('ケツの穴臭すぎですけど...')
     
-    
 @bot.command()
 async def time(ctx):
     await ctx.send('https://www.time-j.net/WorldTime/Country/JP')
     
-    
 @bot.command()
 async def yeah(ctx):
     await ctx.send("Yeah! That's exactly what l've been wanting BOOMERANG!!!")
-    
     
 @bot.command()
 async def dare(ctx):
@@ -86,6 +75,13 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
 '''
+@client.event
+async def on_ready():
+	print('Logged in as')
+	print(client.user.name)
+	print(client.user.id)
+	print('------')
+    
 @client.event
 async def on_voice_state_update(member, before, after): 
     if member.guild.id == 600996774336790538:
