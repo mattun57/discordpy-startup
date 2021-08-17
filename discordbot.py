@@ -1,11 +1,12 @@
 from discord.ext import commands
 from os import getenv
 import traceback
+
 import discord
 import asyncio
 
 bot = commands.Bot(command_prefix='/')
-client = discord.Client()
+client = commands.Bot(command_prefix='!')
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -85,7 +86,7 @@ async def on_voice_state_update(member, before, after):
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
 '''
-
+'''
 @client.event
 async def on_voice_state_update(member, before, after): 
     if member.guild.id == '600996774336790538' and (before.channel != after.channel):
@@ -96,7 +97,15 @@ async def on_voice_state_update(member, before, after):
         elif after.channel is None: 
             msg = f'{member.name} が {before.channel.name} から退出しました。'
             await alert_channel.send(msg)
-            
+'''
+
+@client.event
+async def on_voice_state_update(before, after):
+    if before.voice.voice_channel is None and after.voice.voice_channel is not None:
+        for channel in before.server.channels:
+            if channel.name == 'general':
+                await client.send_message(channel, "きましたけど...")
+
            
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
