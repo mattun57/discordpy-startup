@@ -38,7 +38,7 @@ async def on_voice_state_update(member, before, after):
         print(member.guild)
         if before.channel is None:
             #msg = f'{member.name} さんが {after.channel.name} に参加しましたけど...'
-            await member.guild.send('やあ')
+            await message.botRoom.send('やあ')
 
 
 @client.event
