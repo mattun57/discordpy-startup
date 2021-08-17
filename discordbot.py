@@ -3,9 +3,10 @@ from os import getenv
 import traceback
 
 import discord
+import asyncio
 
 bot = commands.Bot(command_prefix='/')
-client = commands.Bot(command_prefix='!')
+client = discord.Client()
 
 @bot.event
 async def on_command_error(ctx, error):
