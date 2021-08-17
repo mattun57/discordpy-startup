@@ -33,17 +33,18 @@ async def on_ready():
 @client.event
 async def on_voice_state_update(member, before, after):
     if member.guild.id == 600996774336790538:
-        botRoom = client.get_channel(600996774336790539)
+        #botRoom = client.get_channel(600996774336790539)
+        botRoom = "<TextChannel id=600996774336790540 name='一般' position=0 nsfw=False news=False category_id=600996774336790539>"
         if before.channel is None:
             #msg = f'{member.name} さんが {after.channel.name} に参加しましたけど...'
-            await member.botRoom.send('入りましたけど...')
+            await botRoom.send('入りましたけど...')
 
 
 @client.event
 async def on_message(message):
     if message.content.startswith("hello"):
         m = "こんにちは...ですけど"
-        await message.channel.send(message.channel)
+        await message.channel.send(m)
 
 
 token = getenv('DISCORD_BOT_TOKEN')
