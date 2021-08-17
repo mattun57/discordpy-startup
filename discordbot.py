@@ -4,7 +4,7 @@ import asyncio
 
 client = discord.Client()
 
-'''
+
 @client.event
 async def on_voice_state_update(member, before, after):
 
@@ -20,7 +20,7 @@ async def on_voice_state_update(member, before, after):
         # 入室通知
         if after.channel is not None and after.channel.id in announceChannelIds:
             await botRoom.send("**" + after.channel.name + "** に、__" + member.name + "__  が参加しましたけど...")
-'''
+
 
 @client.event
 async def on_ready():
@@ -29,7 +29,7 @@ async def on_ready():
 	print(client.user.id)
 	print('------')
 
-
+'''
 @client.event
 async def on_voice_state_update(member, before, after):
     if member.guild.id == 600996774336790538:
@@ -37,7 +37,7 @@ async def on_voice_state_update(member, before, after):
         if before.channel is None:
             msg = f'{member.name} が {after.channel.name} に参加しました。'
             await text_ch.send(msg)
-
+'''
 
 @client.event
 async def on_message(message):
