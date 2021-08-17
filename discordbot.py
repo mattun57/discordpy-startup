@@ -1,16 +1,13 @@
-from discord.ext import commands
 from os import getenv
-import traceback
-
 import discord
 import asyncio
 
 client = discord.Client()
- 
+
 '''
 @client.event
 async def on_voice_state_update(member, before, after):
- 
+
     if before.channel != after.channel:
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
         botRoom = client.get_channel(600996774336790539)
@@ -31,24 +28,23 @@ async def on_ready():
 	print(client.user.name)
 	print(client.user.id)
 	print('------')
-    
+
 
 @client.event
-async def on_voice_state_update(member, before, after): 
+async def on_voice_state_update(member, before, after):
     if member.guild.id == 600996774336790538:
-        text_ch = '一般'
-        if before.channel is None: 
+        text_ch = '600996774336790539'
+        if before.channel is None:
             msg = f'{member.name} が {after.channel.name} に参加しました。'
             await text_ch.send(msg)
 
-		
+
 @client.event
 async def on_message(message):
     if message.content.startswith("hello"):
         m = "こんにちは...ですけど"
         await message.channel.send(message.channel)
 
-        
-           
+
 token = getenv('DISCORD_BOT_TOKEN')
 client.run(token)
