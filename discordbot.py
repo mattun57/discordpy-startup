@@ -6,10 +6,10 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-	print('Logged in as')
+	print("Logged in as")
 	print(client.user.name)
 	print(client.user.id)
-	print('------')
+	print("------")
 
 
 @client.event
@@ -30,10 +30,10 @@ async def on_message(message):
         await message.channel.send("こんにちは...ですけど")
 
     if message.content.startswith("世界時間"):
-    await message.channel.send("https://www.time-j.net/WorldTime/Country/JP")
+        await message.channel.send("https://www.time-j.net/WorldTime/Country/JP")
 
     if message.content.startswith("yaeh"):
-    await message.channel.send("That's exactly what l've been wanting BOOMERANG!!!")
+        await message.channel.send("That's exactly what l've been wanting BOOMERANG!!!")
 
 
 token = getenv('DISCORD_BOT_TOKEN')
