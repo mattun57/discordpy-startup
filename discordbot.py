@@ -23,17 +23,19 @@ async def on_voice_state_update(member, before, after):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("ありがとねぇ"):
-        await message.channel.send("どういたしまして...ですけど...")
-
     if message.content.startswith("やあ"):
-        await message.channel.send("こんにちは...ですけど")
+        msg = f'**{message.member.name}**さん、こんにちはですけど...'
+        await message.channel.send(msg)
 
     if message.content.startswith("世界時間"):
         await message.channel.send("https://www.time-j.net/WorldTime/Country/JP")
 
     if message.content.startswith("yaeh"):
         await message.channel.send("That's exactly what l've been wanting BOOMERANG!!!")
+
+    if message.content.startswith("のー"):
+        msg = f'**{message.member.name}**さんは今日はむーりーみたいですけど...'
+        await message.channel.send(msg)
 
 
 token = getenv('DISCORD_BOT_TOKEN')
