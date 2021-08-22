@@ -27,14 +27,18 @@ async def on_message(message):
         msg = f'**{message.member.name}**さん、こんにちはですけど...'
         await message.channel.send(msg)
 
-    if message.content.startswith("世界時間"):
+    if message.content.startswith("time"):
         await message.channel.send("https://www.time-j.net/WorldTime/Country/JP")
 
     if message.content.startswith("yaeh"):
         await message.channel.send("That's exactly what l've been wanting BOOMERANG!!!")
 
     if message.content.startswith("のー"):
-        msg = f'**{message.member.name}**さんは今日はむーりーみたいですけど...'
+        msg = f'**{message.member.name}**さんは今日むーりぃーみたいですけど...'
+        await message.channel.send(msg)
+
+    if message.content.startswith("ひん"):
+        msg = f'**{message.member.name}**さん、元気出してくださいぃ...'
         await message.channel.send(msg)
 
 
