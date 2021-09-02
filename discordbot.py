@@ -17,10 +17,7 @@ async def on_voice_state_update(member, before, after):
     if member.guild.id == 849955942015565824:
         txtRoom = client.get_channel(849955942015565827)
         if before.channel is None:
-            if member.id == 522369401878478848:
-                msg = f'**人間のクズ**が **{member.guild.name}** に入ってきましたけど...'
-            else:
-                msg = f'**{member.name}**さんが **{member.guild.name}** に参加しましたけど...'
+            msg = f'**{member.name}**さんが **{member.guild.name}** に参加しましたけど...'
             await txtRoom.send(msg)
 
 
