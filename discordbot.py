@@ -14,8 +14,8 @@ async def on_ready():
 
 @client.event
 async def on_voice_state_update(member, before, after):
-    if member.guild.id == 849955942015565824:
-        txtRoom = client.get_channel(849955942015565827)
+    if member.guild.id == 'サーバーIDをここに記入（クォート不要）':
+        txt_room = client.get_channel('テキストチャンネルIDをここに記入（クォート不要）')
         if before.channel is None:
             msg = f'**{member.name}**さんが **{member.guild.name}** に参加しましたけど...'
             await txtRoom.send(msg)
@@ -23,21 +23,12 @@ async def on_voice_state_update(member, before, after):
 
 @client.event
 async def on_message(message):
-    if message.content.startswith("やあ"):
-        msg = f'**{message.member.name}**さん、こんにちはですけど...'
-        await message.channel.send(msg)
-
     if message.content.startswith("time"):
         await message.channel.send("https://www.time-j.net/WorldTime/Country/JP")
 
     if message.content.startswith("のー"):
         msg = f'**{message.member.name}**さんは今日むーりぃーみたいですけど...'
         await message.channel.send(msg)
-
-    if message.content.startswith("ひん"):
-        msg = f'**{message.member.name}**さん、元気出してくださいぃ...'
-        await message.channel.send(msg)
-
 
 token = getenv('DISCORD_BOT_TOKEN')
 client.run(token)
